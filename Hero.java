@@ -10,6 +10,7 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
+    private boolean onGround;
 
     public Hero() {
         super();
@@ -22,7 +23,7 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
-        
+
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
@@ -36,17 +37,27 @@ public class Hero extends Mover {
                 break;
             }
         }
+        try{
+            if(isTouching(Tile.class) == false){
+                onGround = false;
+            }
+            else{
+                onGround = true;
+            }
+        }
+        catch(Exception E){
+        }
     }
 
     public void handleInput() {
-        if (Greenfoot.isKeyDown("w")) {
+        if (Greenfoot.isKeyDown("space") && onGround == true) {
             velocityY = -10;
         }
 
-        if (Greenfoot.isKeyDown("a")) {
-            velocityX = -2;
-        } else if (Greenfoot.isKeyDown("d")) {
-            velocityX = 2;
+        if (Greenfoot.isKeyDown("left")) {
+            velocityX = -10;
+        } else if (Greenfoot.isKeyDown("right")) {
+            velocityX = 10;
         }
     }
 
