@@ -10,7 +10,7 @@ public class Hero extends Mover {
     private final double gravity;
     private final double acc;
     private final double drag;
-    private boolean onGround;
+    public int levens = 2;
 
     public Hero() {
         super();
@@ -25,7 +25,7 @@ public class Hero extends Mover {
         handleInput();
 
         velocityX *= drag;
-        velocityY += acc;
+        velocityY += acc; 
         if (velocityY > gravity) {
             velocityY = gravity;
         }
@@ -33,39 +33,41 @@ public class Hero extends Mover {
 
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
-                getWorld().removeObject(this);
-                break;
+                if (levens >= 0) {
+                    this.setLocation(300, 200);
+                }
+                else{
+                    Greenfoot.stop();
+                    return;
+                }
+            }
+
+        }
+    }
+        public void handleInput() {
+            if (Greenfoot.isKeyDown("space") && onGround() == (true)) {
+                velocityY = -13;
+            }
+
+            if (Greenfoot.isKeyDown("left")) {
+                velocityX = -7.5;
+            } else if (Greenfoot.isKeyDown("right")) {
+                velocityX = 7.5;
             }
         }
-        try{
-            if(isTouching(Tile.class) == false){
-                onGround = false;
-            }
-            else{
-                onGround = true;
-            }
-        }
-        catch(Exception E){
-        }
-    }
 
-    public void handleInput() {
-        if (Greenfoot.isKeyDown("space") && onGround == true) {
-            velocityY = -10;
+        public int getWidth() {
+            return getImage().getWidth();
         }
 
-        if (Greenfoot.isKeyDown("left")) {
-            velocityX = -10;
-        } else if (Greenfoot.isKeyDown("right")) {
-            velocityX = 10;
+        public int getHeight() {
+            return getImage().getHeight();
         }
+    boolean onGround()
+    {
+        Actor under = getOneObjectAtOffset(0, getImage().getHeight()/2, Tile.class);
+        return under != null;
     }
-
-    public int getWidth() {
-        return getImage().getWidth();
+    
     }
-
-    public int getHeight() {
-        return getImage().getHeight();
-    }
-}
+    
