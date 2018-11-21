@@ -21,6 +21,8 @@ public class MyWorld extends World {
         if(en.enemyWon == true){
             en.enemyWon = false;
             removeObjects(getObjects(Enemy.class));
+            Greenfoot.setWorld(new Verloren());
+ 
         }
     }
     
