@@ -33,9 +33,12 @@ public class Hero extends Mover {
             velocityY = gravity;
         }
         applyVelocity();
-
-        //for (Actor enemy : getIntersectingObjects(Enemy.class)) {
-            if (/*enemy != null*/ isTouching(Enemy.class) == true) {
+        if(isTouching(Enemy.class)){
+            removeTouching(Enemy.class);
+        }
+        
+        /*for (Actor enemy : getIntersectingObjects(Enemy.class)) {
+            if (enemy != null isTouching(Enemy.class) == true) {
                 if (levens > 1) {
                     this.setLocation(300, 200);
                     levens --;
@@ -46,7 +49,7 @@ public class Hero extends Mover {
                 }
             }
 
-        //}
+        //}*/
     }
         public void handleInput() {
             if (Greenfoot.isKeyDown("space") && onGround() == (true)) {
@@ -54,9 +57,13 @@ public class Hero extends Mover {
             }
 
             if (Greenfoot.isKeyDown("left")) {
-                velocityX = -7.5;
+                velocityX = -5.5;
             } else if (Greenfoot.isKeyDown("right")) {
-                velocityX = 7.5;
+                velocityX = 5.5;
+            }
+            if(Greenfoot.isKeyDown("l")){
+                System.out.println(getX() + ", " + getY());
+                Greenfoot.delay(10);
             }
         }
 
