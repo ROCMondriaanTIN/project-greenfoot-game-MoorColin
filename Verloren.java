@@ -11,6 +11,7 @@ public class Verloren extends MyWorld
     public Verloren()
     {
         setBackground("bg2(lose).png");
+        clearScreen();
         Greenfoot.stop();
     }
 }

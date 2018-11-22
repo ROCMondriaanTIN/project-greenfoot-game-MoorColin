@@ -119,5 +119,9 @@ public class MyWorld extends World {
         }
     }
     
-    
+    public void clearScreen(){
+        removeObjects(getObjects(Tile.class));
+        removeObjects(getObjects(Hero.class));
+        removeObjects(getObjects(Enemy.class));
+    }
 }
