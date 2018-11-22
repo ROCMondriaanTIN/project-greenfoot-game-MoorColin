@@ -19,7 +19,7 @@ public class Enemy extends Mover {
 
     public Enemy() {
         super();
-        setImage("p2_stand.png");
+        setImage("p3_stand.png");
         walkRange = 170;
         firstAct = true;
         speed = 4;
