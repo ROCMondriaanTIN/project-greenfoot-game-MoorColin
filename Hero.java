@@ -81,10 +81,10 @@ public class Hero extends Mover {
         }
 
         if (Greenfoot.isKeyDown("left")) {
-            velocityX = -5.5;
+            velocityX = -7.5;
             setImage("p1_left.png");
         } else if (Greenfoot.isKeyDown("right")) {
-            velocityX = 5.5;
+            velocityX = 7.5;
             setImage("p1_right.png");
         }
         if(Greenfoot.isKeyDown("l")){
