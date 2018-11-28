@@ -3,18 +3,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level1 extends MyWorld
 {
     CollisionEngine ce;
-    
+    Hero hr = new Hero();
     public void act(){
         super.act();
         /*if(hr.inLevel == true){
-            ce.update();
+        ce.update();
         }*/
         try{
-           ce.update(); 
+            ce.update(); 
         }
         catch(Exception e){
         }
     }
+
     public Level1()
     {
         this.setBackground("bg.png");
@@ -54,9 +55,7 @@ public class Level1 extends MyWorld
                 {10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10},
                 {10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10},
 
-
             };
-
         // Declareren en initialiseren van de TileEngine klasse om de map aan de world toe te voegen
         TileEngine te = new TileEngine(this, 60, 60, map);
         // Declarenre en initialiseren van de camera klasse met de TileEngine klasse 
@@ -73,7 +72,9 @@ public class Level1 extends MyWorld
         addObject(camera, 0, 0);
         addObject(hero, 100, 250);
         addObject(enemy1, 400, 315);
-        addObject(new Levens(), 632, 436);
+        if(hr.levens < 3){
+            addObject(new Levens(), 632, 436);
+        }
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
         ce = new CollisionEngine(te, camera);
