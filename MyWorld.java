@@ -9,7 +9,8 @@ public class MyWorld extends World {
 
     private CollisionEngine ce;
     Hero hr = new Hero();
-    Enemy en;
+    Enemy en;    
+    public static int level;
 
     @Override
     public void act() {

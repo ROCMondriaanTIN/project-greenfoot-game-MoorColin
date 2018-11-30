@@ -1,7 +1,5 @@
 
-
 import greenfoot.*;
-
 /**
  *
  * @author R. Springer
@@ -41,14 +39,27 @@ public class Enemy extends Mover {
         }
         velocityX = speed;
         applyVelocity();
-        if(getX() >= 1040 && getX() <= 1050 || getX() >= 1520 && getX() <= 1530 || 
-        getX() >= 2060 && getX() <= 2070 || 
-        getX() >= 2570 && getX() <= 2580 || getX() >= 2785 && getX() <= 2795
-        || getX() >= 3235 && getX() <= 3245 || getX() >= 4125 && getX() <= 4135){
-            velocityY = -15;
+
+        switch(MyWorld.level){
+
+            case 1: 
+            if(getX() >= 1040 && getX() <= 1050 || getX() >= 1520 && getX() <= 1530 || 
+            getX() >= 2060 && getX() <= 2070 || 
+            getX() >= 2570 && getX() <= 2580 || getX() >= 2785 && getX() <= 2795
+            || getX() >= 3235 && getX() <= 3245 || getX() >= 4125 && getX() <= 4135){
+                velocityY = -15;
+            }
+            if (getX() >= 3795 && getX() <= 3805 ){
+                setLocation(3880 , 252);
+            }
+            break;
+            
+            case 2:
+            break;
+            case 3:
+            break;
+     
         }
-        if (getX() >= 3795 && getX() <= 3805 ){
-            setLocation(3880 , 252);
-        }
+
     }
 }

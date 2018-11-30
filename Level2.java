@@ -18,6 +18,7 @@ public class Level2 extends MyWorld
 
     public Level2()
     {
+        MyWorld.level = 2;
         this.setBackground("bg.png");
         hr.inLevel = false;
         hud();
@@ -70,7 +71,7 @@ public class Level2 extends MyWorld
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
         addObject(hero, 120, 914);
-        addObject(enemy1, 332, 914);
+        addObject(enemy1, 250, 914);
         if(hr.levens < 3){
             addObject(new Levens(), 632, 436);
         }

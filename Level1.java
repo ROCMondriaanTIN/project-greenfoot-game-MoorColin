@@ -18,6 +18,7 @@ public class Level1 extends MyWorld
 
     public Level1()
     {
+        MyWorld.level = 1;
         this.setBackground("bg.png");
         hr.inLevel = false;
         hud();
