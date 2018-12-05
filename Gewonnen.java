@@ -11,7 +11,14 @@ public class Gewonnen extends MyWorld
 
     public void act(){
         if(Greenfoot.isKeyDown("enter")){
-            Greenfoot.setWorld(new Level2());
+            switch(MyWorld.level){
+                case 1: Greenfoot.setWorld(new Level2());
+                break;
+                case 2: Greenfoot.setWorld(new Level3());
+                break;
+                case 3: Greenfoot.setWorld(new Level1());
+                break;
+            }
         }
     }
     public Gewonnen()

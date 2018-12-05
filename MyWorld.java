@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World {
 
     private CollisionEngine ce;
-    Hero hr = new Hero();
     Enemy en;    
     public static int level;
 
@@ -22,27 +21,27 @@ public class MyWorld extends World {
             removeObjects(getObjects(Enemy.class));
             Greenfoot.setWorld(new Verloren());
         }
-        if(hr.win == true){
-            hr.win = false;
+        if(Hero.win == true){
+            Hero.win = false;
             Greenfoot.setWorld(new Gewonnen());
         }
         if(Greenfoot.isKeyDown("enter")){
-            hr.levens = 2;
+            Hero.levens = 2;
             Greenfoot.setWorld(new Level1());
         }
     }
 
     public MyWorld() {
         super(1000, 800, 1, false);
-        hr.inLevel = false;
-        this.setBackground("ssChase.png");
+        Hero.inLevel = false;
+        setBackground("ssChase.png");
         Greenfoot.start();
     }
 
     public void isDead(){
 
-            if(hr.touchingEnemy == true){
-                hr.touchingEnemy = false;
+            if(Hero.touchingEnemy == true){
+                Hero.touchingEnemy = false;
                 clearScreen();
                 Greenfoot.setWorld(new Level1());
             }
@@ -50,11 +49,11 @@ public class MyWorld extends World {
     }
 
     private void backgroundChange(){
-        if(hr.inCave == true && hr.inLevel == true){
+        if(Hero.inCave == true && Hero.inLevel == true){
             setBackground("castleCenter2.png");
-            //System.out.println("1: " + hr.inCave);
+            //System.out.println("1: " + Hero.inCave);
         }
-        else if(hr.inCave == false && hr.inLevel == true){
+        else if(Hero.inCave == false && Hero.inLevel == true){
             setBackground("bg.png");
         }
         else{
@@ -63,15 +62,15 @@ public class MyWorld extends World {
     }
 
     public void hud(){
-        if(hr.inLevel == true){
-            for (int i = 0; i < hr.levens; i ++){
+        if(Hero.inLevel == true){
+            for (int i = 0; i < Hero.levens; i ++){
                 addObject(new NewHud_p1(),(50 + (i * 15)),40);
             }
         }
     }   
 
     public void hudUpdate(){
-        if(getObjects(NewHud_p1.class).size() != hr.levens){
+        if(getObjects(NewHud_p1.class).size() != Hero.levens){
             removeObjects(getObjects(NewHud_p1.class));
             hud();
         }

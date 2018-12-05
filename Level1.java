@@ -6,9 +6,6 @@ public class Level1 extends MyWorld
     Hero hr = new Hero();
     public void act(){
         super.act();
-        /*if(hr.inLevel == true){
-        ce.update();
-        }*/
         try{
             ce.update(); 
         }
@@ -73,8 +70,8 @@ public class Level1 extends MyWorld
         addObject(camera, 0, 0);
         addObject(hero, 100, 250);
         addObject(enemy1, 400, 315);
-        if(hr.levens < 3){
-            addObject(new Levens(), 632, 436);
+        if(Hero.levenLvl1 == true){
+            addObject(new Levens(), 575, 795);
         }
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.

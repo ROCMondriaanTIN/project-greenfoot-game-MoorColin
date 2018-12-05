@@ -50,6 +50,10 @@ public class Mover extends Actor {
         }
         setLocation((int) (getX() + .5 + velocityX), (int) (getY() + .5 + velocityY));
     }
+    
+    public void applyVelocity(int integer) {
+        setLocation((int) (getX() + 4.5), (int) (getY() + velocityY));
+    }
 
     @Override
     public void setLocation(int x, int y) {

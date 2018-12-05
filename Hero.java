@@ -16,6 +16,7 @@ public class Hero extends Mover {
     public static boolean alive = true;
     public static boolean win = false;
     public static boolean touchingEnemy = false;
+    public static boolean levenLvl1 = true;
     Enemy en;
 
     public Hero() {
@@ -28,11 +29,12 @@ public class Hero extends Mover {
 
     public void touchingLevens(){
         if(isTouching(Levens.class)){
+            levenLvl1 = false;
             levens ++;
             removeTouching(Levens.class);
         }
     }
-    
+
     @Override
     public void act() {
         touchingLevens();
@@ -81,10 +83,10 @@ public class Hero extends Mover {
         }
 
         if (Greenfoot.isKeyDown("left")) {
-            velocityX = -7.5;
+            velocityX = -5.7;
             setImage("p1_left.png");
         } else if (Greenfoot.isKeyDown("right")) {
-            velocityX = 7.5;
+            velocityX = 5.7;
             setImage("p1_right.png");
         }
         if(Greenfoot.isKeyDown("l")){
