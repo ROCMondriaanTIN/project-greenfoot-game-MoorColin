@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level1 extends MyWorld
 {
     CollisionEngine ce;
-    Hero hr = new Hero();
+    Hero hero = new Hero();
     public void act(){
         super.act();
         try{
@@ -15,9 +15,10 @@ public class Level1 extends MyWorld
 
     public Level1()
     {
+        Hero.jumpHeight = -13;
         MyWorld.level = 1;
         this.setBackground("bg.png");
-        hr.inLevel = false;
+        hero.inLevel = false;
         hud();
         int[][] map = {
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,128,111,111,111,111,111,111,111,111,111,111,111,111,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,34,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -79,7 +80,7 @@ public class Level1 extends MyWorld
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
         ce.addCollidingMover(enemy1);
-        hr.inLevel = true;
-        hr.inLevel1 = true;
+        hero.inLevel = true;
+        hero.inLevel1 = true;
     }
 }

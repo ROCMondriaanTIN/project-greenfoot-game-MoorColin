@@ -3,7 +3,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level2 extends MyWorld
 {
     CollisionEngine ce;
-    Hero hr = new Hero();
     public void act(){
         super.act();
         /*if(hr.inLevel == true){
@@ -18,9 +17,11 @@ public class Level2 extends MyWorld
 
     public Level2()
     {
+        Hero.jumpHeight = -13;
         MyWorld.level = 2;
         this.setBackground("bg.png");
-        hr.inLevel = false;
+        Hero hero = new Hero();
+        hero.inLevel = false;
         hud();
         int[][] map = {
                 {35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35,35},
@@ -63,7 +64,6 @@ public class Level2 extends MyWorld
         Camera camera = new Camera(te);
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
-        Hero hero = new Hero();
 
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
@@ -72,7 +72,7 @@ public class Level2 extends MyWorld
         addObject(camera, 0, 0);
         addObject(hero, 120, 914);
         addObject(enemy1, 738, 914);
-        if(hr.levens < 4){
+        if(hero.levens < 4){
             addObject(new Levens(), 2641, 854);
         }
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
@@ -81,7 +81,7 @@ public class Level2 extends MyWorld
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
         ce.addCollidingMover(enemy1);
-        hr.inLevel = true;
-        hr.inLevel2 = true;
+        hero.inLevel = true;
+        hero.inLevel2 = true;
     }
 }

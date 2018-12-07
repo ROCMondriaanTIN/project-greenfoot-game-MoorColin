@@ -40,11 +40,11 @@ public class MyWorld extends World {
 
     public void isDead(){
 
-            if(Hero.touchingEnemy == true){
-                Hero.touchingEnemy = false;
-                clearScreen();
-                Greenfoot.setWorld(new Level1());
-            }
+        if(Hero.touchingEnemy == true){
+            Hero.touchingEnemy = false;
+            clearScreen();
+            levelGenerator();
+        }
 
     }
     public static void levelGenerator(){
@@ -58,10 +58,15 @@ public class MyWorld extends World {
             case 3:
             Greenfoot.setWorld(new Level3());
             break;
+            default:
+            break;
         }
     }
     private void backgroundChange(){
-        if(Hero.inCave == true && Hero.inLevel == true){
+        if(level == 3){
+            setBackground("bglvl3.png");
+        }
+        else if(Hero.inCave == true && Hero.inLevel == true ){
             setBackground("castleCenter2.png");
             //System.out.println("1: " + Hero.inCave);
         }

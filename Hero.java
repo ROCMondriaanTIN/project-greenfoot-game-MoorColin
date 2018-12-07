@@ -1,4 +1,3 @@
-
 import greenfoot.*;
 
 /**
@@ -28,7 +27,7 @@ public class Hero extends Mover {
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
-        setImage("p1_right.png");
+        setImage("p1_right.png");        
     }
 
     public void touchingLevens(){
@@ -67,11 +66,11 @@ public class Hero extends Mover {
             if (levens > 1) {
                 touchingEnemy = true;
                 levens --;
-                MyWorld.levelGenerator();
+                return;
             }
             else{
                 en.enemyWon = true;
-                levens = 3;
+                levens = 2;
                 return;
             }   
         }
