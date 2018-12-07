@@ -94,14 +94,12 @@ public class Hero extends Mover {
     }
 
     public void handleInput() {
+<<<<<<< HEAD
         if (Greenfoot.isKeyDown("space") && onGround() == (true)) {
             velocityY = jumpHeight;
-                velocityY = -17;
-                
-            }
-        
+        }
 
-        if(Greenfoot.isKeyDown("left")){
+        if (Greenfoot.isKeyDown("left")) {
             velocityX = -5.65;
             setImage("p1_left.png");
         } else if (Greenfoot.isKeyDown("right")) {
@@ -111,6 +109,24 @@ public class Hero extends Mover {
         if(Greenfoot.isKeyDown("l")){
             System.out.println(getX() + ", " + getY());
             Greenfoot.delay(10);
+=======
+        if (Greenfoot.isKeyDown("w")) {
+            if (isOnGround) {
+                velocityY = -17;
+                animationJump(getWidth(), getHeight(), 2);
+            }
+        }
+        if (Greenfoot.isKeyDown("a")) {
+            velocityX = -5;
+            direction = "left";
+            animationWalk(getWidth(), getHeight(), player);
+        } else if (Greenfoot.isKeyDown("d")) {
+            velocityX = 5;
+            direction = "right";
+            animationWalk(getWidth(), getHeight(), player);
+        } else {
+            animationStand(getWidth(), getHeight(), player);
+>>>>>>> 4a4cbd06505c14f713bfe4c613217d6161f8ac8d
         }
     }
 
@@ -138,5 +154,4 @@ public class Hero extends Mover {
     }
 
 }
-
  

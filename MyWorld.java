@@ -48,7 +48,6 @@ public class MyWorld extends World {
         
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
-        ce = new CollisionEngine(te, camera);
        
 
     }
@@ -97,8 +96,6 @@ public class MyWorld extends World {
             hud();
         }
 
-        hero.act();
-        camera.act();
     }
 
     public void clearScreen(){
