@@ -53,7 +53,7 @@ public class Enemy extends Mover {
             break;
             
             case 2:
-            if(getX() >= 428 && getX() <= 431 || getX() >= 872 && getX() <= 875 || 
+            if(getX() >= 872 && getX() <= 875 || 
             getX() >= 1265 && getX() <= 1268 || 
             getX() >= 1617 && getX() <= 1620 || getX() >= 2011 && getX() <= 2014 || 
             getX() >= 2307 && getX() <= 2310 || getX() >= 2729 && getX() <= 2732 || 
@@ -63,8 +63,12 @@ public class Enemy extends Mover {
             break;
             
             case 3:
-            if(getX() >= 390 && getX() <= 393 || getX() >= 940 && getX() <= 943 || 
-            getX() >= 1378 && getX() <= 1381){
+            if(getX() >= 390 && getX() <= 393 || getX() >= 940 && getX() <= 943  
+            || getX() >= 1378 && getX() <= 1381 || getX() >= 1952 && getX() <= 1955
+            || getX() >= 2194 && getX() <= 2197 || getX() >= 2550 && getX() <= 2553
+            || getX() >= 2796 && getX() <= 2799 || getX() >= 3045 && getX() <= 3048
+            || getX() >= 3339 && getX() <= 3343 || getX() >= 3572 && getX() <= 3575
+            || getX() >= 3809 && getX() <= 3812 || getX() >= 4046 && getX() <= 4049){
                 velocityY = -15;
             }
             break;

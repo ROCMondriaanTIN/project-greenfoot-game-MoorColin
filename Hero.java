@@ -12,11 +12,15 @@ public class Hero extends Mover {
     private final double drag;
     public static int levens = 2;
     public static boolean inLevel = false;
+    public static boolean inLevel1;
+    public static boolean inLevel2;
+    public static boolean inLevel3;
     public static boolean inCave = false;
     public static boolean alive = true;
     public static boolean win = false;
     public static boolean touchingEnemy = false;
     public static boolean levenLvl1 = true;
+    public static int jumpHeight = -13;
     Enemy en;
 
     public Hero() {
@@ -35,8 +39,16 @@ public class Hero extends Mover {
         }
     }
 
+    public void touchingJump(){
+        if(isTouching(Jump.class)){
+            jumpHeight = -18;
+            removeTouching(Jump.class);
+        }
+    }
+
     @Override
     public void act() {
+        touchingJump();
         touchingLevens();
         handleInput();
         backgroundChange();
@@ -47,7 +59,7 @@ public class Hero extends Mover {
         }
         applyVelocity();
         if(isTouching(Enemy.class)){
-            removeTouching(Enemy.class);
+            removeTouching(Enemy.class);    
             win = true;
         }
         if(isTouching(WaterTile.class)){
@@ -55,6 +67,7 @@ public class Hero extends Mover {
             if (levens > 1) {
                 touchingEnemy = true;
                 levens --;
+                MyWorld.levelGenerator();
             }
             else{
                 en.enemyWon = true;
@@ -77,16 +90,20 @@ public class Hero extends Mover {
         //}*/
     }
 
+    public void Checkpoint(){
+
+    }
+
     public void handleInput() {
         if (Greenfoot.isKeyDown("space") && onGround() == (true)) {
-            velocityY = -13;
+            velocityY = jumpHeight;
         }
 
         if (Greenfoot.isKeyDown("left")) {
-            velocityX = -5.7;
+            velocityX = -5.65;
             setImage("p1_left.png");
         } else if (Greenfoot.isKeyDown("right")) {
-            velocityX = 5.7;
+            velocityX = 5.65;
             setImage("p1_right.png");
         }
         if(Greenfoot.isKeyDown("l")){

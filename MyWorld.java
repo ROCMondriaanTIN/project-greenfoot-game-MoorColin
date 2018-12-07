@@ -47,7 +47,19 @@ public class MyWorld extends World {
             }
 
     }
-
+    public static void levelGenerator(){
+        switch(level){
+            case 1:
+            Greenfoot.setWorld(new Level1());
+            break;
+            case 2:
+            Greenfoot.setWorld(new Level2());
+            break;
+            case 3:
+            Greenfoot.setWorld(new Level3());
+            break;
+        }
+    }
     private void backgroundChange(){
         if(Hero.inCave == true && Hero.inLevel == true){
             setBackground("castleCenter2.png");

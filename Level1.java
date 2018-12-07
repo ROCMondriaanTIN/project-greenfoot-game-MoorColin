@@ -80,5 +80,6 @@ public class Level1 extends MyWorld
         ce.addCollidingMover(hero);
         ce.addCollidingMover(enemy1);
         hr.inLevel = true;
+        hr.inLevel1 = true;
     }
 }
