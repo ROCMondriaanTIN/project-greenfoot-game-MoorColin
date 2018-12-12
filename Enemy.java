@@ -74,10 +74,10 @@ public class Enemy extends Mover {
 
             case 4:
             if(getX() >= 406 && getX() <= 409 || getX() >= 915 && getX() <= 918  
-            || getX() >= 1296 && getX() <= 1299 || getX() >= 1677 && getX() <= 1680 
-            || getX() >= 2195 && getX() <= 2197 || getX() >= 2506 && getX() <= 2509
+            || getX() >= 1296 && getX() <= 1299 || getX() >= 1705 && getX() <= 1708 
+            || getX() >= 2232 && getX() <= 2235 || getX() >= 2511 && getX() <= 2514|| getX() >= 2760 && getX() <= 2763
             || getX() >= 3219 && getX() <= 3222 || getX() >= 3525 && getX() <= 3528
-            || getX() >= 3836 && getX() <= 3839){
+            || getX() >= 3836 && getX() <= 3839 || getX() >= 4235 && getX() <= 4238){
                 velocityY = -15;
             }
             break;

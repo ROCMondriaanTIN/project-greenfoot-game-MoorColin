@@ -16,7 +16,7 @@ public class Level3 extends MyWorld
 
     public Level3()
     {
-        Hero.jumpHeight = -13;
+        Hero.jumpHeight = -19;
         MyWorld.level = 3;
         this.setBackground("bglvl3.png");
         hr.inLevel = false;
@@ -71,7 +71,7 @@ public class Level3 extends MyWorld
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
         addObject(hero, 97, 1214);
-        addObject(enemy1, 339, 1214);
+        addObject(enemy1, 769, 1214);
         addObject(new Jump(), 1233, 1154);
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.

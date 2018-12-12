@@ -62,6 +62,9 @@ public class MyWorld extends World {
             case 3:
             Greenfoot.setWorld(new Level3());
             break;
+            case 4:
+            Greenfoot.setWorld(new Level4());
+            break;
             default:
             break;
         }
