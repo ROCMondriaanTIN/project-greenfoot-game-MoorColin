@@ -1,5 +1,4 @@
 
-
 import greenfoot.*;
 /**
  *
@@ -51,7 +50,7 @@ public class Enemy extends Mover {
                 setLocation(3880 , 252);
             }
             break;
-            
+
             case 2:
             if(getX() >= 872 && getX() <= 875 || 
             getX() >= 1265 && getX() <= 1268 || 
@@ -61,7 +60,7 @@ public class Enemy extends Mover {
                 velocityY = -15;
             }
             break;
-            
+
             case 3:
             if(getX() >= 390 && getX() <= 393 || getX() >= 940 && getX() <= 943  
             || getX() >= 1378 && getX() <= 1381 || getX() >= 1952 && getX() <= 1955
@@ -72,7 +71,17 @@ public class Enemy extends Mover {
                 velocityY = -15;
             }
             break;
-     
+
+            case 4:
+            if(getX() >= 406 && getX() <= 409 || getX() >= 915 && getX() <= 918  
+            || getX() >= 1296 && getX() <= 1299 || getX() >= 1677 && getX() <= 1680 
+            || getX() >= 2195 && getX() <= 2197 || getX() >= 2506 && getX() <= 2509
+            || getX() >= 3219 && getX() <= 3222 || getX() >= 3525 && getX() <= 3528
+            || getX() >= 3836 && getX() <= 3839){
+                velocityY = -15;
+            }
+            break;
+
         }
 
     }

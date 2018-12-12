@@ -16,7 +16,9 @@ public class Gewonnen extends MyWorld
                 break;
                 case 2: Greenfoot.setWorld(new Level3());
                 break;
-                case 3: Greenfoot.setWorld(new Level1());
+                case 3: Greenfoot.setWorld(new Level4());
+                break;
+                case 4: Greenfoot.setWorld(new Level1());
                 break;
             }
         }

@@ -67,7 +67,7 @@ public class MyWorld extends World {
         }
     }
     private void backgroundChange(){
-        if(level == 3){
+        if(level >= 3){
             setBackground("bglvl3.png");
         }
         else if(Hero.inCave == true && Hero.inLevel == true ){
